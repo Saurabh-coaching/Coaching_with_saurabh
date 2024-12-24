@@ -62,7 +62,7 @@ Best regards,
 [Your Company Name or Contact Team]`,
     });
 
-    console.log("User confirmation email sent:", userMailInfo.messageId);
+    // console.log("User confirmation email sent:", userMailInfo.messageId);
 
     return NextResponse.json(
       {
@@ -74,9 +74,6 @@ Best regards,
     );
   } catch (error) {
     // console.error("Error sending email:", error);
-    return NextResponse.json(
-      { error: "Failed to send email" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: error }, { status: 500 });
   }
 }
