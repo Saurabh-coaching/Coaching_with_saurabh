@@ -90,14 +90,30 @@ Best regards,
       }
     );
   } catch (error) {
-    return NextResponse.json(
-      { error: "Failed to send email" },
-      {
-        status: 500,
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
-      }
-    );
+    // Narrow down the type of error
+    if (error instanceof Error) {
+      console.error("Error sending email:", error.message); // Log the actual error message
+      return NextResponse.json(
+        { error: "Failed to send email", details: error.message },
+        {
+          status: 500,
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
+      );
+    } else {
+      // Handle cases where the error is not an instance of Error
+      console.error("Unexpected error type:", error);
+      return NextResponse.json(
+        { error: "An unexpected error occurred" },
+        {
+          status: 500,
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
+      );
+    }
   }
 }
