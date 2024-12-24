@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+@layer base {
+  .section-style {
+    @apply container max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-16;
+  }
+
+  .heading {
+    @apply text-xl sm:text-3xl lg:text-4xl font-sans font-bold;
+  }
+
+  .paragraph-style {
+    @apply font-mono font-medium lg:text-lg;
+  }
+}
