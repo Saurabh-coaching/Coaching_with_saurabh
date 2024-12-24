@@ -18,16 +18,32 @@ const transport = nodemailer.createTransport({
 });
 
 export async function POST(req: NextRequest) {
+  // Set CORS headers
+  if (req.method === "OPTIONS") {
+    return NextResponse.json(null, {
+      headers: {
+        "Access-Control-Allow-Origin": "*", // Update this to specific domains if needed
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
+      },
+      status: 204,
+    });
+  }
+
   try {
     const body = await req.json();
-
     const { email, subject, text } = body;
 
     // Validate request payload
     if (!email || !subject || !text) {
       return NextResponse.json(
         { error: "Missing required fields" },
-        { status: 400 }
+        {
+          status: 400,
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
       );
     }
 
@@ -41,8 +57,6 @@ export async function POST(req: NextRequest) {
       subject,
       text,
     });
-
-    // console.log("Admin email sent:", adminMailInfo.messageId);
 
     // Send confirmation email to user
     const userMailInfo = await transport.sendMail({
@@ -62,18 +76,28 @@ Best regards,
 [Your Company Name or Contact Team]`,
     });
 
-    // console.log("User confirmation email sent:", userMailInfo.messageId);
-
     return NextResponse.json(
       {
         message: "Messages sent successfully",
         adminMessageId: adminMailInfo.messageId,
         userMessageId: userMailInfo.messageId,
       },
-      { status: 200 }
+      {
+        status: 200,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
     );
   } catch (error) {
-    // console.error("Error sending email:", error);
-    return NextResponse.json({ error: error }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to send email" },
+      {
+        status: 500,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
+    );
   }
 }
