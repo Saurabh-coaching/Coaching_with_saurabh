@@ -81,32 +81,21 @@ export const whyMeData: WhyMeDataI = {
 export const testimonialsData: TestimonialsData = {
   title: "Testimonials",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "Here are some testimonials from my clients. sharing their experiences with me.",
   testimonials: [
     {
       id: 1,
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      clientName: "Client Name",
+      text: "Saurabh has a great way with people. He can easily put you at ease and has a font of knowledge to share on many topics. He gives excellent perspective on work situations, and offers alternative ways to view things. Every session was actionable , and he kept me accountable by assigning homework. His advice is sound and his personal attention makes you feel valued as an individual.He is very approachable and has intuitive, sensitive listening skills.He was extremely effective in nailing down my personality traits, uncovering what provided me with positive vibes and what I should stay away from. I can highly recommend coaching with Saurabh.",
+      clientName: "Disha Gupta",
       clientImage: client_img1,
     },
     {
       id: 2,
-      text: "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      clientName: "Client Name",
+      text: "I started coaching under Saurabh 10 months ago. Saurabh is an active listener and gave me enough time to put my thoughts together and communicate and made me feel at ease. He helped me set up my goals and follow through on them and his positive attitude helped me move forward despite setbacks. He is very knowledgeable and gives sound advice on personal and professional matters. I would definitely recommend Saurabh as a coach.",
+      clientName: "Marigold Hayes",
       clientImage: client_img2,
     },
-    {
-      id: 3,
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      clientName: "Client Name",
-      clientImage: client_img3,
-    },
-    {
-      id: 4,
-      text: "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      clientName: "Client Name",
-      clientImage: client_img4,
-    },
+
   ],
 };
 

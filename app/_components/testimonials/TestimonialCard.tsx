@@ -1,9 +1,7 @@
-
 import React from "react";
 import Image from "next/image";
 import { Testimonial } from "@/types";
 import { BsQuote } from "react-icons/bs";
-
 
 interface TestimonialCardProps {
   testimonial: Testimonial;
@@ -11,16 +9,15 @@ interface TestimonialCardProps {
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => {
   return (
-    <div className="bg-black p-8 rounded-lg border border-[#9C9C9C] space-y-4 flex flex-col justify-between relative w-full h-full">
-      
+    <div className="bg-black p-8 rounded-lg border border-[#9C9C9C] flex flex-col justify-between relative w-full h-full space-y-4">
       <BsQuote className="h-10 w-10 text-white absolute -inset-4 left-2" />
 
-     
-      <p className="text-gray-300 text-lg leading-relaxed text-justify font-mono">
+      {/* Scrollable testimonial text */}
+      <div className="text-gray-300 text-lg leading-relaxed text-left font-mono overflow-y-auto  scrollbar-thumb-gray-500 scrollbar-track-gray-700" style={{ maxHeight: "150px", width: "100%" }}>
         {testimonial.text}
-      </p>
+      </div>
 
-      
+      {/* Client info */}
       <div className="flex items-center space-x-4">
         <Image
           src={testimonial.clientImage}

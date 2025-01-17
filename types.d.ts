@@ -14,7 +14,7 @@ export interface Testimonial {
   id: number;
   text: string;
   clientName: string;
-  clientImage: string;
+  clientImage: StaticImageData;
 }
 
 export interface TestimonialsData {
