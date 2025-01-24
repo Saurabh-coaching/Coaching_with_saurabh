@@ -42,7 +42,7 @@ import { Program, TestimonialsData, WhyMeDataI } from "@/types";
 export const whyMeData: WhyMeDataI = {
   title: "Why Me?",
   description:
-    "Solving user & business problems since last 15+ years. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "Solving user & business problems since last 15+ years. I can help you get desired results in Personal, Professional and Spiritual realms.",
   sections: [
     {
       title: "What I Provide",
@@ -93,9 +93,8 @@ export const testimonialsData: TestimonialsData = {
       id: 2,
       text: "I started coaching under Saurabh 10 months ago. Saurabh is an active listener and gave me enough time to put my thoughts together and communicate and made me feel at ease. He helped me set up my goals and follow through on them and his positive attitude helped me move forward despite setbacks. He is very knowledgeable and gives sound advice on personal and professional matters. I would definitely recommend Saurabh as a coach.",
       clientName: "Marigold Hayes",
-      clientImage: client_img2,
+      clientImage: client_img1,
     },
-
   ],
 };
 
