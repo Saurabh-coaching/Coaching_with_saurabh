@@ -14,7 +14,7 @@ const Icons = () => {
       <ul className="flex space-x-4 items-center justify-center">
 
         <li >
-          <Link href="" >
+          <Link href="https://www.instagram.com/coachingwithsaurabh?igsh=bjhtM2V6b2hwcXRh" >
             <FaInstagram className="w-8 h-8" />
           </Link>
         </li>
